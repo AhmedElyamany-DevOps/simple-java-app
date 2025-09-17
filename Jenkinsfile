@@ -21,3 +21,13 @@ pipeline{
   }
 }
 
+post {
+  success {
+    slackSend channel: '#jenkins-ci', message: slackSend "Build Success - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", teamDomain: 'yamoo', tokenCredentialId: 'Slack-notifications'
+  }
+  failure {
+    slackSend channel: '#jenkins-ci', message: slackSend "Build Failed - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", teamDomain: 'yamoo', tokenCredentialId: 'Slack-notifications'
+  }
+}
+
+

@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: AhmedElyamany/java-app:latest
+          tags: ahmedelyamany/java-app:latest
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
